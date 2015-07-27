@@ -1,4 +1,4 @@
-﻿<section id="about" class="three">
+﻿<section id="about" class="one dark cover">
     <div class="container">
 
         <header>
@@ -12,21 +12,14 @@
         </p>
         <div class="row">
             <div class="6u 12u$(mobile)">
-                On time: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating,info)" info="OnTime"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Driving: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Driving"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Behaviour: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Behaviour"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Hygenic: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Hygenic"></div>
+                <span ng-repeat="category in categories">
+                    {{category.Name}}
+                    <div star-rating rating-value="current" max="max" category="category.ID" on-rating-selected="getSelectedRating(rating,category)"></div>
+                </span>
             </div>
             <div class="6u 12u$(mobile)">
                 <button id="btnSubmit" type="submit" class="btn btn-primary" ng-click="Submit()">Submit</button>
             </div>
         </div>
-
     </div>
 </section>
